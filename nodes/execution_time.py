@@ -68,7 +68,10 @@ def handle_execute(class_type, last_node_id, prompt_id, server, unique_id):
                  "vram_used": vram_used},
                 server.client_id
             )
-        print(f"#{unique_id} [{class_type}]: {execution_time:.2f}s - vram {vram_used}b")
+        # 使用logging模块记录到控制台
+        import logging
+        logger = logging.getLogger("ComfyUI")
+        logger.info(f"Node Execution Time - #{unique_id} [{class_type}]: {execution_time:.2f}s - VRAM Used: {vram_used/1024/1024:.2f}MB")
 
 
 try:
