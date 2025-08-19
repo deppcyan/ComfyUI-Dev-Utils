@@ -2,10 +2,10 @@ from .nodes.url_download import UrlDownload
 from .nodes.upload_anything import UploadAnything
 from .nodes.execution_time import ExecutionTime
 from .nodes.log_console import *
-from .nodes.execution_time import start_log_catchers_if_needed
-
 # 默认启用日志捕获
+from .nodes.log_console import start_log_catchers_if_needed, log_listener
 start_log_catchers_if_needed()
+log_listener.start_if_needed()
 
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
